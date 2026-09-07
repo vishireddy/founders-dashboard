@@ -1,20 +1,22 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { founders } from '../data/founders'
 
 const values = (key) => ['All', ...new Set(founders.map((founder) => founder[key]))]
 
 export default function FoundersPage() {
+  const [theme, setTheme] = useState('dark')
   const [query, setQuery] = useState('')
   const [sector, setSector] = useState('All')
   const [city, setCity] = useState('All')
+  useEffect(() => { const saved = window.localStorage.getItem('site-theme'); if (saved === 'light' || saved === 'dark') setTheme(saved) }, [])
   const filtered = useMemo(() => founders.filter((founder) => {
     const text = `${founder.name} ${founder.startup} ${founder.about}`.toLowerCase()
     return text.includes(query.toLowerCase()) && (sector === 'All' || founder.sector === sector) && (city === 'All' || founder.city === city)
   }), [query, sector, city])
 
-  return <main className="directory">
+  return <main className="directory" data-theme={theme}>
     <header className="directory-header"><a className="directory-brand" href="/" aria-label="Founders Ecosystem home">FOUNDERS<br /><span>ECOSYSTEM</span></a><a className="back-link" href="/">← Back home</a></header>
     <section className="directory-intro"><p className="eyebrow">THE NETWORK</p><h1>Explore founders.</h1><p>Meet the people building what&apos;s next across the ecosystem.</p></section>
     <section className="directory-tools" aria-label="Directory filters"><label className="search"><span aria-hidden="true">⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search founders or startups" aria-label="Search founders or startups" /></label><select value={sector} onChange={(event) => setSector(event.target.value)} aria-label="Filter by sector">{values('sector').map((value) => <option key={value}>{value === 'All' ? 'All sectors' : value}</option>)}</select><select value={city} onChange={(event) => setCity(event.target.value)} aria-label="Filter by city">{values('city').map((value) => <option key={value}>{value === 'All' ? 'All cities' : value}</option>)}</select></section>

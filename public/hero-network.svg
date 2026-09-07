@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs><radialGradient id="g"><stop stop-color="#1f9fe0" stop-opacity=".45"/><stop offset="1" stop-color="#06213a" stop-opacity="0"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="5"/></filter></defs>
+  <circle cx="400" cy="400" r="365" fill="url(#g)" stroke="#2e9fe0" stroke-opacity=".5"/>
+  <g stroke="#39b9f5" stroke-opacity=".3" stroke-width="2"><ellipse cx="400" cy="400" rx="365" ry="150"/><ellipse cx="400" cy="400" rx="365" ry="265"/><ellipse cx="400" cy="400" rx="170" ry="365"/><ellipse cx="400" cy="400" rx="290" ry="365"/></g>
+  <path d="M365 166 402 181 420 207 449 220 456 252 480 270 473 295 503 316 487 341 507 365 492 393 503 420 484 449 474 480 456 500 448 536 432 571 416 607 399 582 383 544 360 523 349 490 330 469 335 438 315 410 323 379 306 351 324 322 318 292 341 267 338 239Z" fill="#176da4" fill-opacity=".78" stroke="#4fc7ff" stroke-width="4"/>
+  <g stroke="#8adfff" stroke-width="2" stroke-opacity=".65"><path d="m365 166 44 106 56-52M409 272l64 23-72 84 106-14M401 379l-52 111 67 92M401 379l91 14"/></g>
+  <g fill="#fff"><circle cx="365" cy="166" r="5"/><circle cx="409" cy="272" r="5"/><circle cx="456" cy="252" r="5"/><circle cx="473" cy="295" r="5"/><circle cx="401" cy="379" r="5"/><circle cx="503" cy="420" r="5"/><circle cx="349" cy="490" r="5"/><circle cx="416" cy="607" r="5"/></g>
+  <text x="363" y="430" fill="#b7ecff" font-family="Arial, sans-serif" font-size="22" letter-spacing="5" opacity=".8">INDIA</text>
+  <circle cx="400" cy="400" r="370" stroke="#42bdf6" stroke-opacity=".25" stroke-width="10" filter="url(#glow)"/>
+</svg>
